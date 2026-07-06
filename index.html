@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Happy Birthday Ari</title>
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+  <!-- Viewport agar fit di semua device -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Playfair Display', serif;
+      background: linear-gradient(to right, #ff9a9e, #fecfef);
+      overflow-x: hidden;
+    }
+    header {
+      text-align: center;
+      padding: 60px 20px;
+      background-color: rgba(255, 255, 255, 0.85);
+      box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+      position: relative;
+      z-index: 2;
+    }
+    header h1 {
+      font-family: 'Great Vibes', cursive;
+      font-size: 3.5em;
+      font-weight: normal;
+      color: #c2185b;
+      margin: 0;
+      text-shadow: 0 0 15px rgba(255, 120, 150, 0.8);
+      animation: glow 2s ease-in-out infinite alternate;
+    }
+    @keyframes glow {
+      from { text-shadow: 0 0 10px #ff7eb3; }
+      to { text-shadow: 0 0 20px #ff4b2b; }
+    }
+    header p {
+      font-size: 1.2em;
+      font-weight: bold;
+      color: #444;
+      margin-top: 10px;
+    }
+    .content {
+      text-align: center;
+      margin: 40px 20px;
+      position: relative;
+      z-index: 2;
+    }
+    .content img {
+      width: 90%;
+      max-width: 400px;
+      border-radius: 15px;
+      box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+    }
+    .content p {
+      margin-top: 20px;
+      font-size: 1.2em;
+      font-family: 'Great Vibes', cursive;
+      color: #b71c1c;
+    }
+    footer {
+      background-color: rgba(255, 255, 255, 0.9);
+      padding: 40px 20px;
+      text-align: center;
+      position: relative;
+      z-index: 2;
+    }
+    .memory {
+      margin-bottom: 30px;
+    }
+    .memory img {
+      width: 90%;
+      max-width: 300px;
+      border-radius: 10px;
+      box-shadow: 0 6px 12px rgba(0,0,0,0.2);
+    }
+    .memory p {
+      margin-top: 10px;
+      font-size: 1em;
+      font-style: italic;
+      color: #444;
+    }
+    .desc {
+      font-size: 0.95em;
+      color: #666;
+      font-style: italic;
+      margin-top: 5px;
+    }
+    .closing {
+      margin-top: 40px;
+      padding: 20px;
+      background: rgba(243, 203, 234, 0.85);
+      border-radius: 15px;
+      box-shadow: 0 6px 12px rgba(0,0,0,0.2);
+    }
+    .closing p {
+      font-family: 'Great Vibes', cursive;
+      font-size: 1.6em;
+      color: #c2185b;
+      text-shadow: 0 0 10px rgba(255, 120, 150, 0.7);
+      animation: fadeIn 3s ease-in;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+    /* Love falling animation */
+    .love {
+      position: fixed;
+      top: -50px;
+      font-size: 24px;
+      color: red;
+      animation: fall linear forwards;
+      pointer-events: none;
+    }
+    @keyframes fall {
+      to {
+        transform: translateY(110vh);
+        opacity: 0;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Happy Birthday Baby ❤️</h1>
+    <p>"From your man who loves you so much"</p>
+  </header>
+
+  <div class="content">
+    <img src="fotoari1.jpg" alt="Ari Birthday Photo">
+    <p>“Distance means so little when someone means so much, Happy 20th of yours birthday baby,
+       you know i love you so much, i pray God will always give you healthy, patient and best momment, 
+      i cant imagine if i lose you, i have to proof my best to make you stay
+      i know i still nothing, trust me, in your 20th youre not kids anymore, you are special for me,
+       anyway youre cutties in my eyes, dont worry and be happy, enjoy
+  our procces and believe our promise. once again i love yo so much my honey ❤️”</p>
+  </div>
+
+  <footer>
+    <div class="memory">
+      <img src="fotoari2.jpg" alt="Memory 1">
+      <p>Our first adventure together 🌸</p>
+      <p class="desc">It was the day I realized how much joy you bring into my life.</p>
+    </div>
+    <div class="memory">
+      <img src="fotoari3.jpg" alt="Memory 2">
+      <p>A moment I’ll cherish forever 💕</p>
+      <p class="desc">Every we together, we felt free and chill, i hope we can grow and always forever.</p>
+    </div>
+
+    <!-- Kalimat penutup -->
+    <div class="closing">
+      <p>“No matter the distance, no matter the time, my love for you will always shine.  
+      Happy Birthday once again, my honey ❤️”</p>
+      <p style="font-size:1.2em; color:#444444; font-style:italic; margin-top:10px;">From your man ❤️</p>
+    </div>
+  </footer>
+
+  <!-- Music autoplay -->
+  <audio id="bg-music" autoplay loop muted>
+    <source src="bdaysong.mp3" type="audio/mp3">
+  </audio>
+
+  <script>
+    const music = document.getElementById('bg-music');
+    window.addEventListener('load', () => {
+      music.muted = false;
+      music.play().catch(() => {
+        console.log("Autoplay diblokir oleh browser.");
+      });
+    });
+
+    // Love falling effect for 1 minute
+    function createLove() {
+      const love = document.createElement('div');
+      love.classList.add('love');
+      love.innerHTML = '❤️';
+      love.style.left = Math.random() * window.innerWidth + 'px';
+      love.style.animationDuration = (3 + Math.random() * 2) + 's';
+      document.body.appendChild(love);
+      setTimeout(() => love.remove(), 5000);
+    }
+
+    let duration = 60 * 1000; // 1 minute
+    let interval = setInterval(createLove, 300);
+    setTimeout(() => clearInterval(interval), duration);
+  </script>
+</body>
+</html>
